@@ -1,0 +1,14 @@
+body{
+    background-color: #D1A700;
+    color: #0f1757;
+}
+#usernumber{
+    border:5px solid #1A8754;
+    border-radius: 20px;
+    margin: 0 20px;
+    text-align: center;
+}
+.fa-solid{
+    font-size: 60px;
+}
+
