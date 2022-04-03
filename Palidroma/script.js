@@ -9,6 +9,8 @@
 // 5.verifico se la parola è palindroma o meno 
 
 let parolaUtente = prompt('inserisci una parola');
+let titolo = document.querySelector('.titolo');
+console.log(titolo);
 
 function palindromo(parola){
     let scomposta = parola.split('');
@@ -21,4 +23,6 @@ function palindromo(parola){
 }
 let parolaInvertita = palindromo(parolaUtente);
 console.log(parolaInvertita);
+
+titolo.append(`La tua parola al contrario : ${parolaInvertita}`)
 
