@@ -28,13 +28,18 @@ console.log(div);
 let restart = document.getElementById('restart');
 console.log(restart);
 
+let computerFa = document.getElementsByClassName('fa-computer');
+console.log(computerFa);
+
+let userFa = document.getElementsByClassName('fa-user');
+console.log(userFa);
+
 bottonePari.addEventListener('click', numeroPari);
+
 function numeroPari(){
     let userNumber = document.getElementById('usernumber').value;
     let computerNumber = (Math.floor(Math.random() * 100) * 1);
-    console.log(computerNumber);
     let numeroTotale = parseInt(userNumber) + computerNumber;
-    console.log(numeroTotale);
     resoconto.innerHTML += `+ Pc: ${computerNumber} = ${numeroTotale}`;
     if (isNaN(numeroTotale)){
         alert('Carattere non valido, inserisci un numero!')
@@ -42,19 +47,22 @@ function numeroPari(){
     }
     if (numeroTotale % 2 === 0){
         div.innerHTML+= 'Pari! - Hai Vinto!';
+        userFa[0].classList.remove('user');
+        userFa[0].classList.add('fa-winner');
     } else {
         div.innerHTML+= 'Dispari - Hai Perso!';
+        computerFa[0].classList.remove('user');
+        computerFa[0].classList.add('fa-winner');
     }
     restart.classList.remove('d-none');
 };
 
 bottoneDispari.addEventListener('click', numeroDispari);
+
 function numeroDispari(){
     let userNumber = document.getElementById('usernumber').value;
     let computerNumber = (Math.floor(Math.random() * 100) * 1);
-    console.log(computerNumber);
     let numeroTotale = parseInt(userNumber) + computerNumber;
-    console.log(numeroTotale);
     resoconto.innerHTML += `+ Pc: ${computerNumber} = ${numeroTotale}`;
     if (isNaN(numeroTotale)){
         alert('Carattere non valido, inserisci un numero!')
@@ -62,8 +70,12 @@ function numeroDispari(){
     }
     if (numeroTotale % 2 !== 0){
         div.innerHTML+= 'Dispari - Hai Vinto!';
+        userFa[0].classList.remove('user');
+        userFa[0].classList.add('fa-winner');
     } else {
         div.innerHTML+= 'Pari - Hai Perso!';
+        computerFa[0].classList.remove('user');
+        computerFa[0].classList.add('fa-winner');
     } 
     restart.classList.remove('d-none')
 };
