@@ -36,7 +36,11 @@ function numeroPari(){
     let numeroTotale = parseInt(userNumber) + computerNumber;
     console.log(numeroTotale);
     resoconto.innerHTML += `+ Pc: ${computerNumber} = ${numeroTotale}`;
-     if (numeroTotale % 2 === 0){
+    if (isNaN(numeroTotale)){
+        alert('Carattere non valido, inserisci un numero!')
+        window.location.reload();
+    }
+    if (numeroTotale % 2 === 0){
         div.innerHTML+= 'Pari! - Hai Vinto!';
     } else {
         div.innerHTML+= 'Dispari - Hai Perso!';
@@ -52,11 +56,15 @@ function numeroDispari(){
     let numeroTotale = parseInt(userNumber) + computerNumber;
     console.log(numeroTotale);
     resoconto.innerHTML += `+ Pc: ${computerNumber} = ${numeroTotale}`;
+    if (isNaN(numeroTotale)){
+        alert('Carattere non valido, inserisci un numero!')
+        window.location.reload();
+    }
     if (numeroTotale % 2 !== 0){
         div.innerHTML+= 'Dispari - Hai Vinto!';
     } else {
         div.innerHTML+= 'Pari - Hai Perso!';
-    }  
+    } 
     restart.classList.remove('d-none')
 };
 
@@ -64,5 +72,7 @@ restart.addEventListener('click', ricominciaDaCapo);
 function ricominciaDaCapo(){
     window.location.reload();
 };
+
+
 
 
