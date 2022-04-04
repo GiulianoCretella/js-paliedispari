@@ -24,5 +24,10 @@ function palindromo(parola){
 let parolaInvertita = palindromo(parolaUtente);
 console.log(parolaInvertita);
 
-titolo.append(`La tua parola al contrario : ${parolaInvertita}`)
+if(parolaInvertita === parolaUtente){
+    titolo.append(`La tua parola al contrario "${parolaInvertita}" è palindroma!`)
+} else{
+    titolo.append(`La tua parola al contrario "${parolaInvertita}" non è palindroma!`)
+}
+
 
